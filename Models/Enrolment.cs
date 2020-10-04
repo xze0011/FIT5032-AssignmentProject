@@ -11,10 +11,12 @@ namespace FIT5032_AssignmentProject.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Enrolment
     {
         public int Id { get; set; }
+        [DataType(DataType.Date)]
         public System.DateTime EnrolmentDate { get; set; }
         public decimal Grade { get; set; }
         public string UserId { get; set; }

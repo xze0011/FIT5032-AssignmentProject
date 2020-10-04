@@ -11,10 +11,11 @@ using Microsoft.AspNet.Identity;
 
 namespace FIT5032_AssignmentProject.Controllers
 {
+    [Authorize]
     public class StudentsController : Controller
     {
         private ModelContainer db = new ModelContainer();
-        [Authorize]
+
         // GET: Students
         public ActionResult Index()
         {

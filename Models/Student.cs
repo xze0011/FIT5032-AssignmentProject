@@ -11,7 +11,8 @@ namespace FIT5032_AssignmentProject.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Student
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -25,6 +26,7 @@ namespace FIT5032_AssignmentProject.Models
         public string LastName { get; set; }
         public string Gender { get; set; }
         public string Age { get; set; }
+        [DataType(DataType.Date)]
         public System.DateTime Dob { get; set; }
         public int PhoneNumber { get; set; }
         public string Email { get; set; }
