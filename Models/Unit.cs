@@ -11,7 +11,8 @@ namespace FIT5032_AssignmentProject.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Unit
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,8 +22,13 @@ namespace FIT5032_AssignmentProject.Models
         }
     
         public int Id { get; set; }
+        [StringLength(20, MinimumLength = 1)]
+        [Required]
         public string UnitName { get; set; }
+        [StringLength(60,MinimumLength = 3)]
         public string Description { get; set; }
+        [Range(20,2000)]
+        [DataType(DataType.Currency)]
         public decimal PriceAud { get; set; }
         public string UserId { get; set; }
         public int ModuleId { get; set; }
