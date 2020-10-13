@@ -18,7 +18,6 @@ namespace FIT5032_AssignmentProject.Models
         public int Id { get; set; }
         [DataType(DataType.Date)]
         public System.DateTime EnrolmentDate { get; set; }
-        [RegularExpression(@"^[0-9]*$", ErrorMessage = "Please enter correct grade from 0 to 100")]
         [Range(0, 100)]
         public decimal Grade { get; set; }
         public string UserId { get; set; }

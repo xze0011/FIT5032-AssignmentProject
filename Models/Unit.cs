@@ -22,12 +22,11 @@ namespace FIT5032_AssignmentProject.Models
         }
     
         public int Id { get; set; }
-        [StringLength(20, MinimumLength = 1)]
-        [Required]
+        [RegularExpression(@"^[A-Z]+[a-zA-Z ]*$", ErrorMessage = "Please English words with capital first letter")]
         public string UnitName { get; set; }
-        [StringLength(60,MinimumLength = 3)]
+        [RegularExpression(@"^[A-Z]+[a-zA-Z ]*$", ErrorMessage = "Please English words with capital first letter")]
         public string Description { get; set; }
-        [Range(20,2000)]
+        [Range(1,500)]
         [DataType(DataType.Currency)]
         public decimal PriceAud { get; set; }
         public string UserId { get; set; }

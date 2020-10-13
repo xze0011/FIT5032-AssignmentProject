@@ -22,23 +22,19 @@ namespace FIT5032_AssignmentProject.Models
         }
     
         public int Id { get; set; }
-        [Required]
-        [RegularExpression(@"^[A - Za - z] +$",ErrorMessage = "Please enter letters")]
+        [StringLength(30)]
+        [RegularExpression(@"^[A-Z]+[a-zA-Z ]*$", ErrorMessage = "Please English words with a capital first letter")]
         public string FirstName { get; set; }
-        [RegularExpression(@"^[A - Za - z] +$", ErrorMessage = "Please enter letters")]
-        [Required]
-        [StringLength(20, MinimumLength = 1)]
+        [StringLength(30)]
+        [RegularExpression(@"^[A-Z]+[a-zA-Z ]*$", ErrorMessage = "Please English words with a capital first letter")]
         public string LastName { get; set; }
-        [RegularExpression(@" ^(?:m|M|male|Male|f|F|female|Female)$", ErrorMessage = "Please enter gender like MALE/FEMALE")]
-       
+        [RegularExpression(@"^(?:m|M|male|Male|f|F|female|Female)$", ErrorMessage = "Please enter gender like Male/Female")]
         public string Gender { get; set; }
-        [RegularExpression(@"^[0-9]*$", ErrorMessage = "Please enter correct age number from 1 to 100")]
-        [Range(1,100)]
+        [Range(1,110)]
         public string Age { get; set; }
         [DataType(DataType.Date)]
         public System.DateTime Dob { get; set; }
         public int PhoneNumber { get; set; }
-        [RegularExpression(@"^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$", ErrorMessage = "Please enter valid email address")]
         public string Email { get; set; }
         public string UserId { get; set; }
     

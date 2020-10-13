@@ -26,5 +26,10 @@ namespace FIT5032_AssignmentProject.Controllers
 
             return View();
         }
+
+        public ActionResult ErrorPage()
+        {
+            return View();
+        }
     }
 }

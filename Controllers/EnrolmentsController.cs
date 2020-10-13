@@ -11,6 +11,8 @@ using Microsoft.AspNet.Identity;
 
 namespace FIT5032_AssignmentProject.Controllers
 {
+
+    [Authorize]
     public class EnrolmentsController : Controller
     {
         private ModelContainer db = new ModelContainer();

@@ -10,6 +10,7 @@ using FIT5032_AssignmentProject.Models;
 
 namespace FIT5032_AssignmentProject.Controllers
 {
+    [Authorize]
     public class TutorsController : Controller
     {
         private ModelContainer db = new ModelContainer();

@@ -37,10 +37,15 @@ namespace FIT5032_AssignmentProject.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Student student = db.StudentSet.Find(id);
+            //var userId = User.Identity.GetUserId();
             if (student == null)
             {
                 return HttpNotFound();
             }
+            //if (!User.IsInRole("Administrator") && userId != student.UserId)
+            //{
+            //    return RedirectToAction("ErrorPage");
+            //}
             return View(student);
         }
 

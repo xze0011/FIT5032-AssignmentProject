@@ -11,18 +11,20 @@ using Microsoft.AspNet.Identity;
 
 namespace FIT5032_AssignmentProject.Controllers
 {
+    [Authorize]
     public class UnitsController : Controller
     {
         private ModelContainer db = new ModelContainer();
-
+        [Authorize]
         // GET: Units
         public ActionResult Index()
         {
-
+                 
                 var unitSet = db.UnitSet.Include(u => u.Module).Include(u => u.Tutor).Include(u => u.ClassRoom);
                 return View(unitSet.ToList());
         }
 
+        [Authorize]
         // GET: Units/Details/5
         public ActionResult Details(int? id)
         {

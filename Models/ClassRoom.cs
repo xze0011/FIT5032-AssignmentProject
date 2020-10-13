@@ -11,7 +11,8 @@ namespace FIT5032_AssignmentProject.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class ClassRoom
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,8 +22,14 @@ namespace FIT5032_AssignmentProject.Models
         }
     
         public int Id { get; set; }
+        [StringLength(60)]
+        [RegularExpression(@"^[A-Z]+[a-zA-Z ]*$", ErrorMessage = "Please English words with a capital first letter")]
         public string ClassRoomName { get; set; }
+        [RegularExpression(@"^[\-\+]?([0-8]?\d{1}\.\d{1,5}|90\.0{1,5})$", ErrorMessage = "Please enter the latitude from -90 to 90 within 5 decimal points")]
+        [DisplayFormat(DataFormatString = "{0:###.########}")]
         public decimal Latitude { get; set; }
+        [DisplayFormat(DataFormatString = "{0:###.########}")]
+        [RegularExpression(@"^[\-\+]?(0?\d{1,2}\.\d{1,5}|1[0-7]?\d{1}\.\d{1,5}|180\.0{1,5})$", ErrorMessage = "Please enter the longitude from -180 to 180 within 5 decimal points")]
         public decimal Longitude { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
